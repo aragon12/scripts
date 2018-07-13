@@ -21,8 +21,8 @@ printf "\e[1;32m                          .########.########..########.########.
                         .##....##.##....##.##....##...##..##...........##...
                         ..######...######..##.....##.####.##...........##...\e[0m"
 printf """\033[1mWhich Tree Are We Cloning Today?\033[0m\n"""
-printf "Enter nich - For Nichream's Trees\n"
-printf "Enter tr - For Team Realoded's Trees\n"
+printf "\033[1mEnter nich - For Nichream's Trees\033[0m\n"
+printf "\033[1mEnter tr - For Team Realoded's Trees\033[0m\n"
 
 read var1
 if [ $var1 = "tr" ]
