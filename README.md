@@ -1,2 +1,2 @@
-# scripts
-Scripts To Clone DT, VT, KT 
+# SCRIPTS
+Script To Clone DT, VT, KT From Desired Gits.
