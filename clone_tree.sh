@@ -1,5 +1,5 @@
 #!/bin/bash
-printf "\e[1;32m                            .########.########..########.########..######.
+printf "\e[1;32m                          .########.########..########.########..######.
                            ....##....##.....##.##.......##.......##....##
                            ....##....##.....##.##.......##.......##......
                            ....##....########..######...######....######.
@@ -20,14 +20,14 @@ printf "\e[1;32m                            .########.########..########.#######
                         .......##.##.......##...##....##..##...........##...
                         .##....##.##....##.##....##...##..##...........##...
                         ..######...######..##.....##.####.##...........##...\e[0m"
-echo -e """\033[1mWhich Tree Are We Cloning Today?\033[0m"""
-print f "Enter nich - For Nichream's Trees"
-print f "Enter tr - For Team Realoded's Trees"
+printf """\033[1mWhich Tree Are We Cloning Today?\033[0m"""
+printf "Enter nich - For Nichream's Trees"
+printf "Enter tr - For Team Realoded's Trees"
 
 read var1
 if [ $var1 = "tr" ]
   then
-  printf "\033[1;31mCloning Team Reloaded's Trees\033[0m\n"
+  print "\033[1;31mCloning Team Reloaded's Trees\033[0m\n"
     git clone https://github.com/TeamReloaded/android_device_xiaomi_land -b lineage-15.1 device/xiaomi/land
     git clone https://github.com/TeamReloaded/android_kernel_xiaomi_msm8937 -b lineage-15.1 kernel/xiaomi/msm8937
     git clone https://github.com/TeamReloaded/proprietary_vendor_xiaomi -b lineage-15.1-land vendor/xiaomi
@@ -53,7 +53,7 @@ C:::::C               l::::l o::::o     o::::o  n::::n    n::::ne::::::eeeeeeeee
 
 elif [ $var1 = "nich" ]
   then
-  printf "\e[1;32mCloning Nichream's Trees\e[0m"
+  print "\e[1;32mCloning Nichream's Trees\e[0m"
     git clone https://github.com/nichcream/android_device_xiaomi_land -b lineage-15.1 device/xiaomi/land
     git clone https://github.com/nichcream/wingtech_kernel_msm8937 -b lineage-15.1 kernel/xiaomi/mam8937
     git clone https://github.com/nichcream/proprietary_vendor_xiaomi -b lineage-15.1 vendor/xiaomi
