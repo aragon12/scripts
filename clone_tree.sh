@@ -9,14 +9,22 @@ printf "     nich       - for Nichcream\n"
 
 }
 
+git_c() {
+
+br="lineage-16.0"
+if [ ! -z "$3" ]; then br="$3"; fi
+git clone https://github.com/$1 -b $br $2
+
+}
+
 [ -z "$1" ] && usage && exit
 
 if [ $1 = "tr" ]
   then
 printf "\033[1;31mCloning Team Reloaded's Trees\033[0m\n"
-    git clone https://github.com/TeamReloaded/android_device_xiaomi_land -b lineage-16.0 device/xiaomi/land
-    git clone https://github.com/TeamReloaded/android_kernel_xiaomi_msm8937 -b lineage-16.0 kernel/xiaomi/msm8937
-    git clone https://github.com/TeamReloaded/proprietary_vendor_xiaomi -b lineage-16.0-land vendor/xiaomi
+    git_c "TeamReloaded/android_device_xiaomi_land" "device/xiaomi/land"
+    git_c "TeamReloaded/android_kernel_xiaomi_msm8937" "kernel/xiaomi/msm8937"
+    git_c "TeamReloaded/proprietary_vendor_xiaomi" "vendor/xiaomi" "$br-land"
     echo ""
  ▄████▄   ██▓     ▒█████   ███▄    █ ▓█████ ▓█████▄     ██▀███  ▓█████  ██▓     ▒█████   ▄▄▄      ▓█████▄ ▓█████ ▓█████▄   ██████    ▄▄▄█████▓ ██▀███  ▓█████ ▓█████   ██████ 
 ▒██▀ ▀█  ▓██▒    ▒██▒  ██▒ ██ ▀█   █ ▓█   ▀ ▒██▀ ██▌   ▓██ ▒ ██▒▓█   ▀ ▓██▒    ▒██▒  ██▒▒████▄    ▒██▀ ██▌▓█   ▀ ▒██▀ ██▌▒██    ▒    ▓  ██▒ ▓▒▓██ ▒ ██▒▓█   ▀ ▓█   ▀ ▒██    ▒ 
@@ -33,9 +41,9 @@ printf "\033[1;31mCloning Team Reloaded's Trees\033[0m\n"
 elif [ $1 = "nich" ]
   then
 printf "\e[1;32mCloning Nichream's Trees\e[0m\n"
-    git clone https://github.com/nichcream/android_device_xiaomi_land -b lineage-15.1 device/xiaomi/land
-    git clone https://github.com/nichcream/wingtech_kernel_msm8937 -b lineage-15.1 kernel/xiaomi/mam8937
-    git clone https://github.com/nichcream/proprietary_vendor_xiaomi -b lineage-15.1 vendor/xiaomi
+    git_c "nichcream/android_device_xiaomi_land" "device/xiaomi/land"
+    git_c "nichcream/wingtech_kernel_msm8937" "kernel/xiaomi/msm8937"
+    git_c "nichcream/proprietary_vendor_xiaomi" "vendor/xiaomi"
     echo "
  ▄████▄   ██▓     ▒█████   ███▄    █ ▓█████ ▓█████▄     ███▄    █  ██▓ ▄████▄   ██░ ██  ██▀███  ▓█████ ▄▄▄       ███▄ ▄███▓  ██████    ▄▄▄█████▓ ██▀███  ▓█████ ▓█████   ██████ 
 ▒██▀ ▀█  ▓██▒    ▒██▒  ██▒ ██ ▀█   █ ▓█   ▀ ▒██▀ ██▌    ██ ▀█   █ ▓██▒▒██▀ ▀█  ▓██░ ██▒▓██ ▒ ██▒▓█   ▀▒████▄    ▓██▒▀█▀ ██▒▒██    ▒    ▓  ██▒ ▓▒▓██ ▒ ██▒▓█   ▀ ▓█   ▀ ▒██    ▒ 
